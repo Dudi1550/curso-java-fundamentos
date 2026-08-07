@@ -1,1 +1,1 @@
-# Exercícios de Estrutura Sequencial
+# Exercícios gerais
