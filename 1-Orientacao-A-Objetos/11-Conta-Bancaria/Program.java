@@ -10,27 +10,27 @@ public class Program {
 	public static void main(String[] args) {
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);  
+		Account account;
 		
-		System.out.println("Enter account number: ");
+		System.out.print("Enter account number: ");
 		int number = sc.nextInt(); 
-		
-		sc.nextLine();
-		
 		System.out.println("Enter account holder: ");
-		String name = sc.nextLine(); 
+		sc.nextLine();
+		String holder = sc.nextLine(); 
 		
-		
-		double deposit = 0; 
 		System.out.println("Is there na initial deposit (y/n)? ");
 		char respost = sc.nextLine().charAt(0);
 		if (respost == 'y') {
 			System.out.println("Enter initial deposit: ");
-			deposit = sc.nextDouble();  
+			double initialDeposit = sc.nextDouble();  
+			account = new Account(number, holder, initialDeposit); 
+		}
+		else {
+			account = new Account(number, holder);
 		}
 		
 		System.out.println();
 		
-		Account account = new Account(number, name, deposit); 
 		
 		System.out.println("Account data ");
 		System.out.println(account);
@@ -38,14 +38,14 @@ public class Program {
 		System.out.println();
 		
 		System.out.print("Enter a deposit value: ");
-		account.makeDeposit(sc.nextDouble());
+		account.deposit(sc.nextDouble());
 		System.out.println("Update account data: ");
 		System.out.println(account);
 		
 		System.out.println();
 		
 		System.out.print("Enter a withdraw value: "); 
-		account.makewithDraw(sc.nextDouble());
+		account.withdraw(sc.nextDouble());
 		System.out.println("Update account data: ");
 		System.out.println(account);
 		
