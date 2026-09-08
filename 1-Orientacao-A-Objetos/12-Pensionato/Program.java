@@ -16,13 +16,13 @@ public class Program {
 		System.out.println("How many rooms will be ranted? ");
 		n = sc.nextInt();
 		
-		Rent[] vect = new Rent[9];
+		Rent[] vect = new Rent[10];
 		
 		System.out.println();
-		for (int i = 0; i < n; i++) {
+		for (int i = 1; i < n; i++) {
 			sc.nextLine();
 			
-			System.out.println("Rent #" + (i+1) + ": ");
+			System.out.println("Rent #" + i + ": ");
 			System.out.print("Name: ");
 			String name = sc.nextLine(); 
 			System.out.print("Email: ");
@@ -35,7 +35,7 @@ public class Program {
 		}
 		
 		System.out.println("Busy rooms: ");
-		for (int i = 0; i < vect.length; i++) {
+		for (int i = 0; i < 10; i++) {
 			if (vect[i] != null) {
 				System.out.println(i + ": "+ vect[i] );
 			}
